@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 90" role="img" aria-label="Investment">
+  <title>Investment</title>
+  <desc>Minimal logo with a dot mark and the word Investment.</desc>
+  <g fill="none" fill-rule="evenodd">
+    <circle cx="28" cy="45" r="14" fill="#10b981"/>
+    <circle cx="28" cy="45" r="4" fill="#0f172a"/>
+    <text
+      x="56"
+      y="58"
+      font-family="Cormorant Garamond, Georgia, serif"
+      font-size="48"
+      font-weight="600"
+      letter-spacing="1"
+      fill="#0f172a"
+    >investment</text>
+    <path d="M56 68h260" stroke="#0f172a" stroke-width="2" stroke-linecap="round" opacity="0.25"/>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 520" role="img" aria-label="Five floor building">
+  <style>
+    .building-outline { fill:#f8fafc; stroke:#cbd5e1; stroke-width:2; }
+    .floor-line { stroke:#cbd5e1; stroke-width:2; }
+    .window { fill:#e2e8f0; stroke:#94a3b8; stroke-width:1; }
+    .label { font: 12px Arial, sans-serif; fill:#475569; }
+  </style>
+
+  <rect x="30" y="20" width="300" height="480" rx="12" class="building-outline"/>
+
+  <line x1="30" y1="116" x2="330" y2="116" class="floor-line"/>
+  <line x1="30" y1="212" x2="330" y2="212" class="floor-line"/>
+  <line x1="30" y1="308" x2="330" y2="308" class="floor-line"/>
+  <line x1="30" y1="404" x2="330" y2="404" class="floor-line"/>
+
+  <g data-floor-id="floor-5">
+    <text x="44" y="60" class="label">Pietro 5</text>
+    <rect x="70" y="44" width="40" height="28" class="window"/>
+    <rect x="130" y="44" width="40" height="28" class="window"/>
+    <rect x="190" y="44" width="40" height="28" class="window"/>
+    <rect x="250" y="44" width="40" height="28" class="window"/>
+  </g>
+
+  <g data-floor-id="floor-4">
+    <text x="44" y="156" class="label">Pietro 4</text>
+    <rect x="70" y="140" width="40" height="28" class="window"/>
+    <rect x="130" y="140" width="40" height="28" class="window"/>
+    <rect x="190" y="140" width="40" height="28" class="window"/>
+    <rect x="250" y="140" width="40" height="28" class="window"/>
+  </g>
+
+  <g data-floor-id="floor-3">
+    <text x="44" y="252" class="label">Pietro 3</text>
+    <rect x="70" y="236" width="40" height="28" class="window"/>
+    <rect x="130" y="236" width="40" height="28" class="window"/>
+    <rect x="190" y="236" width="40" height="28" class="window"/>
+    <rect x="250" y="236" width="40" height="28" class="window"/>
+  </g>
+
+  <g data-floor-id="floor-2">
+    <text x="44" y="348" class="label">Pietro 2</text>
+    <rect x="70" y="332" width="40" height="28" class="window"/>
+    <rect x="130" y="332" width="40" height="28" class="window"/>
+    <rect x="190" y="332" width="40" height="28" class="window"/>
+    <rect x="250" y="332" width="40" height="28" class="window"/>
+  </g>
+
+  <g data-floor-id="floor-1">
+    <text x="44" y="444" class="label">Pietro 1</text>
+    <rect x="70" y="428" width="40" height="28" class="window"/>
+    <rect x="130" y="428" width="40" height="28" class="window"/>
+    <rect x="190" y="428" width="40" height="28" class="window"/>
+    <rect x="250" y="428" width="40" height="28" class="window"/>
+  </g>
+</svg>

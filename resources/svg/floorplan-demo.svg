@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" class="floorplan-svg">
+  <rect x="20" y="20" width="600" height="380" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+
+  <g data-apartment-id="apt-1" tabindex="0" class="floorplan-unit">
+    <rect x="50" y="50" width="240" height="140" rx="12"/>
+    <text x="70" y="100" font-size="18" font-family="Arial, sans-serif" fill="#0f172a">M1</text>
+  </g>
+
+  <g data-apartment-id="apt-2" tabindex="0" class="floorplan-unit">
+    <rect x="310" y="50" width="260" height="140" rx="12"/>
+    <text x="330" y="100" font-size="18" font-family="Arial, sans-serif" fill="#0f172a">M2</text>
+  </g>
+
+  <g data-apartment-id="apt-3" tabindex="0" class="floorplan-unit">
+    <rect x="50" y="220" width="240" height="150" rx="12"/>
+    <text x="70" y="280" font-size="18" font-family="Arial, sans-serif" fill="#0f172a">M3</text>
+  </g>
+
+  <g data-apartment-id="apt-4" tabindex="0" class="floorplan-unit">
+    <rect x="310" y="220" width="260" height="150" rx="12"/>
+    <text x="330" y="280" font-size="18" font-family="Arial, sans-serif" fill="#0f172a">M4</text>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" width="1536" height="1024" role="img" aria-label="Obrys pieter budynku">
+  <rect data-floor-index="4" x="120" y="230" width="1296" height="135" rx="10" />
+  <rect data-floor-index="3" x="120" y="365" width="1296" height="135" rx="10" />
+  <rect data-floor-index="2" x="120" y="500" width="1296" height="135" rx="10" />
+  <rect data-floor-index="1" x="120" y="635" width="1296" height="135" rx="10" />
+  <rect data-floor-index="0" x="120" y="770" width="1296" height="130" rx="10" />
+</svg>
