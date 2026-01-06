@@ -227,6 +227,7 @@ add_action('admin_post_nopriv_investment_contact', function () {
         $phone = isset($_POST['contact_phone']) ? sanitize_text_field(wp_unslash($_POST['contact_phone'])) : '';
         $email = isset($_POST['contact_email']) ? sanitize_email(wp_unslash($_POST['contact_email'])) : '';
         $message = isset($_POST['contact_message']) ? sanitize_textarea_field(wp_unslash($_POST['contact_message'])) : '';
+        $formSubject = isset($_POST['form_subject']) ? sanitize_text_field(wp_unslash($_POST['form_subject'])) : '';
         $apartmentInfo = isset($_POST['apartment_info']) ? sanitize_text_field(wp_unslash($_POST['apartment_info'])) : '';
         $investmentTitle = isset($_POST['investment_title']) ? sanitize_text_field(wp_unslash($_POST['investment_title'])) : '';
         $apartmentUrl = isset($_POST['apartment_url']) ? esc_url_raw(wp_unslash($_POST['apartment_url'])) : '';
@@ -235,7 +236,7 @@ add_action('admin_post_nopriv_investment_contact', function () {
             return 'error';
         }
 
-        $subject = $investmentTitle ? "Zapytanie o mieszkanie - {$investmentTitle}" : 'Zapytanie o mieszkanie';
+        $subject = $formSubject ?: ($investmentTitle ? "Zapytanie o mieszkanie - {$investmentTitle}" : 'Zapytanie o mieszkanie');
         $bodyLines = [
             "Imie i nazwisko: {$name}",
             "Telefon: {$phone}",

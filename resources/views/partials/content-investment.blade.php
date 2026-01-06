@@ -350,27 +350,28 @@
 
     <section class="container-main border-b border-slate-200 py-12" id="zapytaj">
       
-      <div class="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div class="space-y-4">
-          <p class="text-xl font-semibold uppercase tracking-[0.2em] text-slate-500">Biuro sprzedazy</p>
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-stretch">
+        <div class="contact-panel h-full">
+        <div class="contact-panel__content space-y-5">
+          <p class="contact-panel__eyebrow">Biuro sprzedazy</p>
           @if ($officePhone)
-            <p class="text-md text-base font-semibold text-slate-900">
+            <p class="contact-panel__link">
               <a class="hover:text-slate-700" href="tel:{{ preg_replace('/\\s+/', '', $officePhone) }}">{{ $officePhone }}</a>
             </p>
           @endif
           @if ($officeAddress)
-            <div class="text-sm text-slate-600">{!! nl2br(e($officeAddress)) !!}</div>
+            <div class="contact-panel__text">{!! nl2br(e($officeAddress)) !!}</div>
           @endif
           @if ($officeHours)
-            <div class="text-sm text-slate-600">{!! nl2br(e($officeHours)) !!}</div>
+            <div class="contact-panel__text">{!! nl2br(e($officeHours)) !!}</div>
           @endif
         </div>
         </div>
 
-        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 class="text-xl font-semibold text-slate-900">{{ __('Formularz kontaktowy', 'sage') }}</h3>
-          <p class="mt-2 text-sm text-slate-600">{{ __('Prosze zostawic dane, a oddzwonimy.', 'sage') }}</p>
+        <div class="contact-panel">
+          <div class="contact-panel__content">
+            <h3 class="contact-panel__title">{{ __('Formularz kontaktowy', 'sage') }}</h3>
+            <p class="mt-2 contact-panel__text">{{ __('Prosze zostawic dane, a oddzwonimy.', 'sage') }}</p>
 
           @if ($contactStatus === 'sent')
             <div class="mt-4 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-800">
@@ -382,7 +383,7 @@
             </div>
           @endif
 
-          <form class="mt-6 grid gap-4" action="{{ esc_url(admin_url('admin-post.php')) }}" method="post">
+            <form class="mt-6 grid gap-4" action="{{ esc_url(admin_url('admin-post.php')) }}" method="post">
             @php
               wp_nonce_field('investment_contact', 'investment_contact_nonce');
             @endphp
@@ -413,10 +414,11 @@
               <textarea class="min-h-[140px] w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm focus:border-slate-900 focus:outline-none focus:ring-1 focus:ring-slate-900" id="contact-message" name="contact_message" required>{{ $defaultMessage }}</textarea>
             </div>
 
-            <button class="floor-view-button inline-flex w-full justify-center" type="submit">
-              {{ __('Wyslij zapytanie', 'sage') }}
-            </button>
-          </form>
+              <button class="floor-view-button inline-flex w-full justify-center" type="submit">
+                {{ __('Wyslij zapytanie', 'sage') }}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>

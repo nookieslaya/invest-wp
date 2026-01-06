@@ -20,7 +20,7 @@
     @endif
 
     @if ($heading)
-      <h2 class="text-3xl font-semibold text-slate-900 md:text-4xl">{{ $heading }}</h2>
+      <h2 class="text-3xl font-semibold text-slate-900 md:text-4xl ">{{ $heading }}</h2>
     @endif
 
     @if ($description)

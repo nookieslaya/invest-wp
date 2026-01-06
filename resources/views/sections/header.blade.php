@@ -54,7 +54,7 @@
 
   @if (has_nav_menu('primary_navigation'))
     <nav
-      class="absolute left-0 right-0 top-full hidden w-full overflow-hidden rounded-b-3xl border-t md:z-100 border-slate-200 bg-white/95 shadow-[0_20px_45px_rgba(15,23,42,0.08)] backdrop-blur md:static md:block md:overflow-visible md:rounded-none md:border-t md:border-slate-200/70 md:bg-white md:shadow-none md:backdrop-blur-0"
+      class="absolute left-0 right-0 top-full hidden w-full overflow-hidden rounded-b-3xl border-t border-slate-200 md:z-100 bg-white/95 shadow-[0_20px_45px_rgba(15,23,42,0.08)] backdrop-blur md:static md:block md:overflow-visible md:rounded-none md:border-t md:border-slate-200/70 md:bg-white md:shadow-none md:backdrop-blur-0"
       data-primary-nav
       aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}"
     >

@@ -41,6 +41,9 @@ if ($investmentsMap = get_field_partial('modules.investments-map')) {
 if ($news = get_field_partial('modules.news')) {
     $flexibleContent->addLayout($news);
 }
+if ($contact = get_field_partial('modules.contact')) {
+    $flexibleContent->addLayout($contact);
+}
 if ($example = get_field_partial('modules.example')) {
     $flexibleContent->addLayout($example);
 }

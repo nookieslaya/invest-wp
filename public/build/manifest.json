@@ -1,0 +1,52 @@
+{
+  "editor.deps.json": {
+    "file": "assets/editor.deps-DxpY22xl.json",
+    "src": "editor.deps.json"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-BkrWbHjd.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/editor.css": {
+    "file": "assets/editor-CM9L1env.css",
+    "src": "resources/css/editor.css",
+    "isEntry": true
+  },
+  "resources/images/apartment-floorplan-detailed.png": {
+    "file": "assets/apartment-floorplan-detailed-BwT-RIqx.png",
+    "src": "resources/images/apartment-floorplan-detailed.png"
+  },
+  "resources/images/building-4floors.png": {
+    "file": "assets/building-4floors-CYnUdhBg.png",
+    "src": "resources/images/building-4floors.png"
+  },
+  "resources/images/building.png": {
+    "file": "assets/building-BoDZH6xW.png",
+    "src": "resources/images/building.png"
+  },
+  "resources/images/floorplan-demo.png": {
+    "file": "assets/floorplan-demo-nor6Ionb.png",
+    "src": "resources/images/floorplan-demo.png"
+  },
+  "resources/images/floorplan-detailed.png": {
+    "file": "assets/floorplan-detailed-BCGzHiPG.png",
+    "src": "resources/images/floorplan-detailed.png"
+  },
+  "resources/images/logo-investment.svg": {
+    "file": "assets/logo-investment-OL1T4v4b.svg",
+    "src": "resources/images/logo-investment.svg"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-C5zPbTMb.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/editor.js": {
+    "file": "assets/editor-CfU4GbSP.js",
+    "name": "editor",
+    "src": "resources/js/editor.js",
+    "isEntry": true
+  }
+}

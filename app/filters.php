@@ -34,7 +34,7 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args) {
         return $atts;
     }
 
-    $class = 'relative !no-underline inline-flex w-full items-center gap-2 rounded-full px-3 py-2 text-sm font-medium text-slate-900 transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 md:w-auto';
+    $class = 'relative !no-underline inline-flex w-full items-center gap-2 rounded-full px-4 py-3 text-sm font-medium text-slate-900 transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 md:w-auto md:px-5 md:py-4';
 
     if (in_array('menu-item-has-children', $item->classes ?? [], true)) {
         $class .= " after:ml-2 after:text-xs after:text-slate-500 after:content-['v']";
@@ -51,31 +51,33 @@ add_filter('nav_menu_submenu_css_class', function ($classes, $args, $depth) {
     }
 
     $classes[] = 'm-0';
-    $classes[] = '-mt-2';
     $classes[] = 'hidden';
     $classes[] = 'list-none';
     $classes[] = 'flex-col';
     $classes[] = 'gap-2';
     $classes[] = 'border-l';
+    $classes[] = 'md:border-none';
     $classes[] = 'border-slate-200';
     $classes[] = 'p-0';
     $classes[] = 'pl-4';
-    $classes[] = 'md:absolute';
-    $classes[] = 'md:left-0';
-    $classes[] = 'md:top-full';
-    $classes[] = 'md:min-w-[220px]';
-    $classes[] = 'md:rounded-xl';
-    $classes[] = 'md:border';
-    $classes[] = 'md:border-slate-200';
-    $classes[] = 'md:bg-white';
-    $classes[] = 'md:p-4';
     $classes[] = 'md:pl-0';
-    $classes[] = 'md:shadow-xl';
-    $classes[] = 'md:opacity-0';
-    $classes[] = 'md:invisible';
-    $classes[] = 'md:translate-y-2';
-    $classes[] = 'md:transition';
-    $classes[] = 'md:duration-200';
+    // $classes[] = 'md:absolute';
+    // $classes[] = 'md:left-0';
+    // $classes[] = 'md:top-full';
+    // $classes[] = 'md:min-w-[220px]';
+    // $classes[] = 'md:rounded-none';
+    // $classes[] = 'md:border';
+    // $classes[] = 'md:border-slate-200';
+    // $classes[] = 'md:bg-white';
+    // $classes[] = 'md:p-4';
+    // $classes[] = 'md:pl-0';
+    // $classes[] = 'md:shadow-xl';
+    // $classes[] = 'md:opacity-0';
+    // $classes[] = 'md:invisible';
+    // $classes[] = 'md:translate-y-2';
+    // $classes[] = 'md:transition';
+    // $classes[] = 'md:duration-200';
+    // $classes[] = 'md:!-z-100';
 
     return array_values(array_unique($classes));
 }, 10, 3);

@@ -5,7 +5,7 @@ import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin'
 
 export default defineConfig({
   // Ścieżka z punktu widzenia PRZEGLĄDARKI, nie systemu plików
-  base: '/wp-content/themes/NAZWA_MOTYWU/public/build/',
+  base: '/wp-content/themes/invest/public/build/',
 
   plugins: [
     tailwindcss(),
