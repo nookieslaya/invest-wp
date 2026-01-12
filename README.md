@@ -1,31 +1,37 @@
-<p align="center">
-  <a href="https://roots.io/sage/"><img alt="Sage" src="https://cdn.roots.io/app/uploads/logo-sage.svg" height="100"></a>
-</p>
+# Invest Theme
 
-<p align="center">
-  <a href="https://packagist.org/packages/roots/sage"><img alt="Packagist Installs" src="https://img.shields.io/packagist/dt/roots/sage?label=projects%20created&colorB=2b3072&colorA=525ddc&style=flat-square"></a>
-  <a href="https://github.com/roots/sage/actions/workflows/main.yml"><img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/roots/sage/main.yml?branch=main&logo=github&label=CI&style=flat-square"></a>
-  <a href="https://bsky.app/profile/roots.dev"><img alt="Follow roots.dev on Bluesky" src="https://img.shields.io/badge/follow-@roots.dev-0085ff?logo=bluesky&style=flat-square"></a>
-</p>
+Custom WordPress theme built on Sage (Roots) with Blade, Vite, and Tailwind CSS.
 
-# Sage
+Production demo: https://mediumorchid-fly-708696.hostingersite.com/
 
-**Advanced hybrid WordPress starter theme with Laravel Blade and Tailwind CSS**
+## Stack
+- WordPress theme using Sage + Acorn (Laravel Blade templates).
+- Frontend build with Vite + Tailwind CSS.
+- ACF Pro with acf-builder for flexible fields and ACF blocks.
+- Gutenberg blocks (ACF blocks and a sample native block in JS).
 
-- 🔧 Clean, efficient theme templating with Laravel Blade
-- ⚡️ Modern front-end development workflow powered by Vite
-- 🎨 Out of the box support for Tailwind CSS
-- 🚀 Harness the power of Laravel with [Acorn integration](https://github.com/roots/acorn)
-- 📦 Block editor support built-in
+## Structure (high level)
+- `app/` theme logic (setup, filters, ACF registration).
+- `app/fields/` ACF field groups.
+  - `app/fields/modules/` flexible content modules.
+  - `app/fields/blocks/` ACF block field groups.
+- `resources/views/` Blade templates.
+  - `resources/views/modules/` module partials.
+  - `resources/views/blocks/` block templates.
+- `resources/js/` JS entrypoints and modules.
+  - `resources/js/editor.js` registers native Gutenberg blocks.
 
-Sage brings proper PHP templating and modern JavaScript tooling to WordPress themes. Write organized, component-based code using Laravel Blade, enjoy instant builds and CSS hot-reloading with Vite, and leverage Laravel's robust feature set through Acorn.
+## Build and dev
+From the theme directory:
+- `npm install`
+- `npm run dev` (watch)
+- `npm run build` (production)
 
-[Read the docs to get started](https://roots.io/sage/docs/installation/)
+## Blocks
+- ACF blocks are registered in `app/setup.php` via `acf_register_block_type`.
+- ACF block fields are listed in `app/fields/blocks.php`.
+- Native block example is registered in `resources/js/editor.js`.
 
-## Sponsors
-
-Sage is an open source project and completely free to use. If you've benefited from our projects and would like to support our future endeavors, [please consider sponsoring us](https://github.com/sponsors/roots).
-
-<div align="center">
-<a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="120" height="90"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="120" height="90"></a> <a href="https://worksitesafety.ca/careers/"><img src="https://cdn.roots.io/app/uploads/worksite-safety.svg" alt="Worksite Safety" width="120" height="90"></a> <a href="https://40q.agency/"><img src="https://cdn.roots.io/app/uploads/40q.svg" alt="40Q" width="120" height="90"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="Itineris" width="120" height="90"></a> <a href="https://bonsai.so/"><img src="https://cdn.roots.io/app/uploads/bonsai.svg" alt="Bonsai" width="120" height="90"></a>
-</div>
+## Notes
+- Editor styles/scripts are loaded in `app/setup.php`.
+- The theme uses `resources/css/editor.css` for Gutenberg styling.
