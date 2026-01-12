@@ -407,6 +407,83 @@ add_action('acf/init', function () {
     }
 });
 
+add_action('acf/init', function () {
+    if (! function_exists('acf_register_block_type')) {
+        return;
+    }
+
+    acf_register_block_type([
+        'name' => 'cta-strip',
+        'title' => __('CTA Strip', 'sage'),
+        'description' => __('Call to action banner with button.', 'sage'),
+        'category' => 'layout',
+        'icon' => 'megaphone',
+        'keywords' => ['cta', 'call to action', 'banner'],
+        'supports' => [
+            'anchor' => true,
+            'align' => true,
+        ],
+        'render_callback' => function ($block, $content = '', $is_preview = false, $post_id = 0) {
+            $fields = function_exists('get_fields') ? (get_fields() ?: []) : [];
+
+            echo \Roots\view('blocks.cta-strip', [
+                'block' => $block,
+                'content' => $content,
+                'is_preview' => $is_preview,
+                'post_id' => $post_id,
+                'fields' => $fields,
+            ])->render();
+        },
+    ]);
+
+    acf_register_block_type([
+        'name' => 'hero-strip',
+        'title' => __('Hero Strip', 'sage'),
+        'description' => __('Narrow hero strip with title and image.', 'sage'),
+        'category' => 'layout',
+        'icon' => 'cover-image',
+        'keywords' => ['hero', 'banner', 'strip'],
+        'supports' => [
+            'anchor' => true,
+            'align' => true,
+        ],
+        'render_callback' => function ($block, $content = '', $is_preview = false, $post_id = 0) {
+            $fields = function_exists('get_fields') ? (get_fields() ?: []) : [];
+
+            echo \Roots\view('blocks.hero-strip', [
+                'block' => $block,
+                'content' => $content,
+                'is_preview' => $is_preview,
+                'post_id' => $post_id,
+                'fields' => $fields,
+            ])->render();
+        },
+    ]);
+
+    acf_register_block_type([
+        'name' => 'testimonials',
+        'title' => __('Testimonials', 'sage'),
+        'description' => __('Testimonials grid with quotes.', 'sage'),
+        'category' => 'widgets',
+        'icon' => 'format-quote',
+        'keywords' => ['testimonials', 'quote', 'review'],
+        'supports' => [
+            'anchor' => true,
+        ],
+        'render_callback' => function ($block, $content = '', $is_preview = false, $post_id = 0) {
+            $fields = function_exists('get_fields') ? (get_fields() ?: []) : [];
+
+            echo \Roots\view('blocks.testimonials', [
+                'block' => $block,
+                'content' => $content,
+                'is_preview' => $is_preview,
+                'post_id' => $post_id,
+                'fields' => $fields,
+            ])->render();
+        },
+    ]);
+});
+
 add_action('admin_enqueue_scripts', function ($hook) {
     if (! in_array($hook, ['post.php', 'post-new.php'], true)) {
         return;

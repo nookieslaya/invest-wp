@@ -33,18 +33,40 @@
       </div>
 
       <div class="flex items-center gap-3">
-        <a class="text-sm font-semibold text-slate-900" href="tel:{{ $phoneHref }}">
-          {{ $phoneNumber }}
+        <a
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 md:h-auto md:w-auto md:rounded-none md:border-0 md:bg-transparent md:text-sm md:font-semibold"
+          href="tel:{{ $phoneHref }}"
+        >
+          <span class="hidden md:inline">{{ $phoneNumber }}</span>
+          <span class="sr-only md:hidden">Call</span>
+          <span class="md:hidden" aria-hidden="true">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.8.3 1.6.6 2.3a2 2 0 0 1-.5 2.1L8 9a16 16 0 0 0 7 7l.9-1.2a2 2 0 0 1 2.1-.5c.7.3 1.5.5 2.3.6a2 2 0 0 1 1.7 2z"></path>
+            </svg>
+          </span>
         </a>
 
         <button
-          class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 md:hidden"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 md:hidden"
           type="button"
           data-menu-toggle
           aria-controls="primary-menu"
           aria-expanded="false"
         >
-          Menu
+          <span class="sr-only">Menu</span>
+          <span class="menu-toggle__icon menu-toggle__icon--open" aria-hidden="true">
+            <svg class="menu-toggle__svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </span>
+          <span class="menu-toggle__icon menu-toggle__icon--close" aria-hidden="true">
+            <svg class="menu-toggle__svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+            </svg>
+          </span>
         </button>
       </div>
       </div>

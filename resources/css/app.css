@@ -45,6 +45,30 @@
 }
 
 @layer components {
+  .menu-toggle__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-toggle__icon--close {
+    display: none;
+  }
+
+  [data-menu-toggle][aria-expanded='true'] .menu-toggle__icon--open {
+    display: none;
+  }
+
+  [data-menu-toggle][aria-expanded='true'] .menu-toggle__icon--close {
+    display: inline-flex;
+  }
+
+  .menu-toggle__svg {
+    @apply h-5 w-5;
+  }
+}
+
+@layer components {
   .footer-menu {
     @apply flex flex-col gap-2;
   }

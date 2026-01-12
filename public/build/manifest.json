@@ -4,12 +4,12 @@
     "src": "editor.deps.json"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BkrWbHjd.css",
+    "file": "assets/app-D9JbSNA2.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/css/editor.css": {
-    "file": "assets/editor-CM9L1env.css",
+    "file": "assets/editor-CBNUzwps.css",
     "src": "resources/css/editor.css",
     "isEntry": true
   },
