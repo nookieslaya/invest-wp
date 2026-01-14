@@ -49,7 +49,7 @@ Application::configure()
 |
 */
 
-collect(['setup', 'filters'])
+collect(['setup', 'filters', 'gurtenberg'])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(
@@ -58,3 +58,5 @@ collect(['setup', 'filters'])
             );
         }
     });
+
+

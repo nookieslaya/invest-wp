@@ -1,3 +1,4 @@
-import './blocks/hero-basic';
-import './blocks/text-basic';
-import './blocks/text';
+import './blocks/hero-basic.jsx';
+import './blocks/text-basic.jsx';
+import './blocks/text.jsx';
+import './blocks/gutenberg-cta-block';
