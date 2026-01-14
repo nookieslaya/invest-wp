@@ -1,6 +1,7 @@
 @import "tailwindcss" theme(static);
 @source "../views/";
 @source "../../app/";
+@source "../js/**/*.{js,jsx,ts,tsx}";
 
 @layer base {
   :root {
