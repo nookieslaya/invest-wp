@@ -20,6 +20,9 @@ $flexibleContent = $modules->addFlexibleContent('flexible_modules', [
 if ($hero = get_field_partial('modules.hero')) {
     $flexibleContent->addLayout($hero);
 }
+if ($shopHero = get_field_partial('modules.shop-hero')) {
+    $flexibleContent->addLayout($shopHero);
+}
 if ($investmentHero = get_field_partial('modules.investment-hero')) {
     $flexibleContent->addLayout($investmentHero);
 }

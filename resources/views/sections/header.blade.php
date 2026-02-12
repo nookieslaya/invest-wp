@@ -3,6 +3,18 @@
   $phoneNumber = $phoneNumber ?: '+48 000 000 000';
   $phoneHref = preg_replace('/[^0-9+]/', '', $phoneNumber);
   $logoUrl = get_theme_file_uri('resources/images/logo-investment.svg');
+
+  $hasWoo = class_exists('WooCommerce');
+  $myAccountUrl = '';
+  $cartUrl = '';
+  $cartCount = 0;
+
+  if ($hasWoo) {
+    $accountPageId = function_exists('wc_get_page_id') ? (int) wc_get_page_id('myaccount') : 0;
+    $myAccountUrl = $accountPageId > 0 ? wc_get_page_permalink('myaccount') : home_url('/my-account/');
+    $cartUrl = function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/cart/');
+    $cartCount = function_exists('WC') && WC()->cart ? (int) WC()->cart->get_cart_contents_count() : 0;
+  }
 @endphp
 
 <header
@@ -45,6 +57,42 @@
             </svg>
           </span>
         </a>
+
+        @if ($hasWoo)
+          <a
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 md:h-auto md:w-auto md:rounded-none md:border-0 md:bg-transparent md:px-2 md:text-sm md:font-semibold"
+            href="{{ esc_url($myAccountUrl) }}"
+          >
+            <span class="hidden md:inline">{{ __('My account', 'woocommerce') }}</span>
+            <span class="sr-only md:hidden">{{ __('My account', 'woocommerce') }}</span>
+            <span class="md:hidden" aria-hidden="true">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21a8 8 0 0 0-16 0"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </span>
+          </a>
+
+          <a
+            class="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 md:h-auto md:w-auto md:rounded-none md:border-0 md:bg-transparent md:px-2 md:text-sm md:font-semibold"
+            href="{{ esc_url($cartUrl) }}"
+          >
+            <span class="hidden md:inline">{{ __('Cart', 'woocommerce') }}</span>
+            <span class="sr-only md:hidden">{{ __('Cart', 'woocommerce') }}</span>
+            <span class="md:hidden" aria-hidden="true">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="20" r="1"></circle>
+                <circle cx="20" cy="20" r="1"></circle>
+                <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L23 6H6"></path>
+              </svg>
+            </span>
+            @if ($cartCount > 0)
+              <span class="absolute -right-1 -top-1 inline-flex min-h-[1.1rem] min-w-[1.1rem] items-center justify-center rounded-full bg-slate-900 px-1 text-[10px] font-semibold text-white md:-right-2 md:-top-2">
+                {{ $cartCount }}
+              </span>
+            @endif
+          </a>
+        @endif
 
         <button
           class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 md:hidden"

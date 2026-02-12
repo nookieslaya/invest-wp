@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Purpose: Bootstrap Sage/Acorn and load core theme setup files.
+ */
+
 use Roots\Acorn\Application;
 
 /*
@@ -49,7 +53,7 @@ Application::configure()
 |
 */
 
-collect(['setup', 'filters', 'gurtenberg'])
+collect(['setup', 'filters', 'gurtenberg', 'woocommerce'])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(
@@ -58,5 +62,3 @@ collect(['setup', 'filters', 'gurtenberg'])
             );
         }
     });
-
-
